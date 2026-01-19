@@ -1,2 +1,3 @@
 numero = int(input('Informe um número: '))
-print('O número informado foi: ' + str(numero))
+for i in range(1, 11):
+    print(str(numero)+' x '+str(i)+' = '+str(numero*i))
