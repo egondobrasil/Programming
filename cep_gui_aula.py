@@ -33,6 +33,7 @@ janela = tk.Tk()
 janela.title("Consulta do Cep")
 janela.geometry("210x480")
 janela.resizable(False,False)
+janela.configure(bg="#008888")
  
 # Labels e entrys
 tk.Label(janela, text="CEP").pack(pady=3)
@@ -47,7 +48,7 @@ entry_endereco = tk.Entry(janela, width=32)
 entry_endereco.pack()
  
 tk.Label(janela, text="Número").pack(pady=3)
-entry_numero = tk.Entry(janela, width=5)
+entry_numero = tk.Entry(janela, width=5, bg="black", fg="white")
 entry_numero.pack()
  
 tk.Label(janela, text="Complemento").pack(pady=3)
