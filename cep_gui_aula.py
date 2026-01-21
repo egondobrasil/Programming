@@ -31,8 +31,8 @@ def consultar_cep():
 # Interface gráfica
 janela = tk.Tk()
 janela.title("Consulta do Cep")
-janela.geometry("420x450")
-janela.resizable(False,False)#
+janela.geometry("210x480")
+janela.resizable(False,False)
  
 # Labels e entrys
 tk.Label(janela, text="CEP").pack(pady=3)
@@ -47,11 +47,11 @@ entry_endereco = tk.Entry(janela, width=32)
 entry_endereco.pack()
  
 tk.Label(janela, text="Número").pack(pady=3)
-entry_numero = tk.Entry(janela, width=30)
+entry_numero = tk.Entry(janela, width=5)
 entry_numero.pack()
  
 tk.Label(janela, text="Complemento").pack(pady=3)
-entry_complemento = tk.Entry(janela, width=30)
+entry_complemento = tk.Entry(janela, width=5)
 entry_complemento.pack()
  
 tk.Label(janela, text="Bairro").pack(pady=3)
@@ -59,16 +59,19 @@ entry_bairro = tk.Entry(janela, width=30)
 entry_bairro.pack()
  
 tk.Label(janela, text="Cidade").pack(pady=3)
-entry_cidade = tk.Entry(janela, width=30)
+entry_cidade = tk.Entry(janela, width=15)
 entry_cidade.pack()
  
 tk.Label(janela, text="Estado").pack(pady=3)
-entry_estado = tk.Entry(janela, width=30)
+entry_estado = tk.Entry(janela, width=3)
 entry_estado.pack()
  
  
 #Botão gravar
 tk.Button(janela,text="Gravar",width=20,bg="#198754",fg="white").pack(pady=15)
- 
+
+#Botão Copiar
+tk.Button(janela,text="Copiar",width=20,bg="navy",fg="white").pack(pady=15)
+
 # Apresentando a tela
 janela.mainloop()
