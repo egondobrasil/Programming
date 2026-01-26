@@ -6,7 +6,10 @@ from bs4 import BeautifulSoup
 
 
 url='https://www.sp.senac.br/senac-lapa-tito/cursos-livres/curso-de-python-i-fundamentos'  # Substitua pela URL desejada
-resp = requests.get(url, timeout=10)  # Fazer uma requisição GET para a URL
+headers = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'
+}
+resp = requests.get(url, headers=headers, timeout=10)  # Fazer uma requisição GET para a URL
 resp.raise_for_status()  # Verificar se a requisição foi bem-sucedida
 soup = BeautifulSoup(resp.text, 'html.parser')  # Analisar o conteúdo HTML da página
 
