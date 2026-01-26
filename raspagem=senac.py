@@ -20,3 +20,7 @@ for p in soup.select('p.ssp-card-detalhe-curso__secundary-info-carga-horaria'):
 
 for div in soup.select('div.ssp-saiba-mais-curso-accordion__heading'):
     print(div.get_text(strip=True))  # Extrair e exibir o texto de cada parágrafo
+
+for div in soup.select('div.ssp-saiba-mais-curso-accordion__contents'):
+    print(div.get_text(strip=True))  # Extrair e exibir o texto de cada parágrafo
+
