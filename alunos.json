@@ -3,5 +3,20 @@
     "nome": "Egon",
     "idade": "39",
     "curso": "Python I"
+  },
+  {
+    "nome": "Oregon Massachussets",
+    "idade": "59",
+    "curso": "PHP"
+  },
+  {
+    "nome": "José Maria Lisboa",
+    "idade": "69",
+    "curso": "MySQL"
+  },
+  {
+    "nome": "Maria José do Nascimento",
+    "idade": "57",
+    "curso": "Front-End I"
   }
 ]

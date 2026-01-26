@@ -83,7 +83,22 @@ def remover_aluno(alunos):
     except ValueError:
             print("Digite um número válido.")
 
-# Função buscar_aluno_nome
+# Função buscar_por_nome: Busca inclusive nome parcial.
+def buscar_por_nome(alunos):
+    print("\n--- Buscar aluno por Nome ---")
+    termo = input_nao_vazio("Digite parte do nome: ").lower()
+    resultados = [
+        (i,a) for i,a in enumerate(alunos, start=1)
+        if termo in a["nome"].lower()
+    ]
+    if not resultados:
+        print("Nenhum aluno encontrado.")
+    else:
+        for i,a in resultados:
+            print(f"{i}. Nome: {a['nome']} | Idade: {a['idade']} | Curso: {a['curso']}")
+        print(f"Encontrado(s): {len(resultados)} aluno(s).")
+
+
  
 # Função editar_aluno
  
@@ -108,7 +123,7 @@ def menu():
             case "3":
                 remover_aluno(alunos)
             case "4":
-                print("Opcao 4")
+                buscar_por_nome(alunos)
             case "5":
                 print("Opcao 5")
             case "6":
