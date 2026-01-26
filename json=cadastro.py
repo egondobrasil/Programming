@@ -101,6 +101,37 @@ def buscar_por_nome(alunos):
 
  
 # Função editar_aluno
+def editar_aluno(alunos):
+    print("\n--- Editar Aluno ---")
+    if not alunos:
+        print("Nenhum aluno encontrado.")
+        return
+    listar_alunos(alunos)
+    try:
+        indice = int(input("Número do aluno para editar: "))
+        if 1 <= indice <= len(alunos):
+            aluno = alunos[indice -1]
+            print(f"Editando: {aluno['nome']} | Idade: {aluno['idade']} | Curso: {aluno['curso']}")
+            
+            novo_nome = input(f"Novo nome (Enter para manter {aluno['nome']}'): ").strip()
+            if novo_nome:
+                aluno['nome'] = novo_nome
+
+            nova_idade = input(f"Nova idade (Enter para manter {aluno['idade']}'): ").strip()
+            if nova_idade:
+                aluno['idade'] = nova_idade
+
+            novo_curso = input(f"Novo curso (Enter para manter {aluno['curso']}'): ").strip()
+            if novo_curso:
+                aluno['curso'] = novo_curso
+
+            salvar_alunos(alunos)
+            print("Dados Atualizados com sucesso.")
+
+        else:
+            print("Número inválido.")
+    except ValueError:
+            print("Digite um número válido.")
  
 #------------------ menu ------------------------
 def menu():
@@ -125,7 +156,7 @@ def menu():
             case "4":
                 buscar_por_nome(alunos)
             case "5":
-                print("Opcao 5")
+                editar_aluno(alunos)
             case "6":
                 break
             case _:
