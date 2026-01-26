@@ -54,10 +54,35 @@ def adicionar_aluno(alunos):
     alunos.append(aluno)
     salvar_alunos(alunos)
     print("Aluno cadastrado com Sucesso.")
+
 # Função listar_alunos
- 
+def listar_alunos(alunos):
+    print("\n--- Lista de Alunos ---")
+    if not alunos:
+        print("Nenhum aluno cadastrado.")
+        return
+    for i, a in enumerate(alunos, start=1):
+        print(f"{i}. Nome: {a['nome']} | Idade: {a['idade']} | Curso: {a['curso']}")
+    print(f"Total: {len(alunos)} aluno(s).")
+
 # Função remover_aluno
- 
+def remover_aluno(alunos):
+    print("\n--- Remover Aluno ---")
+    if not alunos:
+        print("Nenhum aluno para remover.")
+        return
+    listar_alunos(alunos)
+    try:
+        indice = int(input("Número do aluno a remover: "))
+        if 1<= indice <= len(alunos):
+            removido = alunos.pop(indice -1)
+            salvar_alunos(alunos)
+            print(f"Alunos '{removido['nome']}' removido com sucesso.")
+        else:
+            print("Número inválido.")
+    except ValueError:
+            print("Digite um número válido.")
+
 # Função buscar_aluno_nome
  
 # Função editar_aluno
@@ -79,9 +104,9 @@ def menu():
             case "1":
                 adicionar_aluno(alunos)
             case "2":
-                print("Opcao 2")
+                listar_alunos(alunos)
             case "3":
-                print("Opcao 3")
+                remover_aluno(alunos)
             case "4":
                 print("Opcao 4")
             case "5":
