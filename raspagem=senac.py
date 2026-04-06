@@ -25,6 +25,14 @@ print(h2.get_text(strip=True)if h2 else 'Sem tag')  # Extrair e exibir o texto d
 span = soup.select_one('span.ssp-card-oferta-curso__valor-desconto')
 print(span.get_text(strip=True)if span else 'Sem tag')  # Extrair e exibir o texto da tag, ou 'Sem tag' se ler a mesma.
 
+h6 = soup.select_one('h6.ssp-card-oferta-curso__item-data-periodo')
+print(h6.get_text(strip=True)if h6 else 'Sem tag')  # Extrair e exibir o texto da tag, ou 'Sem tag' se não houver H2 na página
+
+
+p = soup.select_one('p.ssp-card-oferta-curso__dia-hora-item__dia')
+print(p.get_text(strip=True)if p else 'Sem P')  # Extrair e exibir o texto do P, ou 'Sem P' se não houver P na página
+#<p class="ssp-card-oferta-curso__dia-hora-item__dia"><span data-dia-hora="dias-semana">Terça a sexta: </span><span data-dia-hora="horário">13h30 às 17h30</span></p>
+#<h6 class="ssp-card-oferta-curso__item-data-periodo item-data-periodo_0">10 a 13/2/2026</h6>
 #<span class="ssp-card-oferta-curso__valor-desconto">R$ 300,00</span>
 #<h6 class="ssp-card-oferta-curso__item-valor-investimento"><span>12x</span>R$ 50,00</h6>
 #<div class="codigoOferta_9900360279 ssp-container-botao-bolsa">
